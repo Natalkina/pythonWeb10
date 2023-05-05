@@ -1,0 +1,49 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="mb-4">Sign In</h2>
+
+      {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          {{ form.username }}
+          <span class="text-danger">{{ form.errors.username }}</span>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          {{ form.email }}
+          <span class="text-danger">{{ form.errors.email }}</span>
+        </div>
+        <div class="mb-3">
+          <label for="password1" class="form-label">Password:</label>
+          {{ form.password1 }}
+          <span class="text-danger">{{ form.errors.password1 }}</span>
+        </div>
+        <div class="mb-3">
+          <label for="password2" class="form-label">Confirm Password:</label>
+          {{ form.password2 }}
+          <span class="text-danger">{{ form.errors.password2 }}</span>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+          <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

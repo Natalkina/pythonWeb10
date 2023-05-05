@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pythonweb10"
+version = "0.1.0"
+description = ""
+authors = ["Sokil Natalia <sokilnatalka@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.1"
+pymongo = "^4.3.3"
+mongoengine = "^0.27.0"
+psycopg = "^3.1.9"
+psycopg2 = "^2.9.6"
+quotes = "^0.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
